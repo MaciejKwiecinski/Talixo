@@ -20,7 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0m@v!v^bw0erp56t5857+thk+kvml3225!w@dhl5m%1mt$#90%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api',
-    'talixo'
+    'talixo',
 ]
 
 MIDDLEWARE = [
@@ -77,15 +75,8 @@ WSGI_APPLICATION = 'Talixo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'NAME': 'talixo',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'postgres',
-        'PASSWORD': 'coderslab',
-        'HOST': 'localhost'
-    }
-}
+from .localsettings import DATABASES
+
 
 
 # Password validation
